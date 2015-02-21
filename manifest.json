@@ -28,15 +28,8 @@
       "matches": [
         "https://github.com/*"
       ],
-      "css": [
-        "src/inject/inject.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://github.com/*"
-      ],
       "js": [
+	"js//jquery/jquery.js", 
         "src/inject/inject.js"
       ]
     }
