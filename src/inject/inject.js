@@ -1,6 +1,10 @@
 $(document).ready(function(){
-    var btn = document.createElement("BUTTON");
-    var t = document.createTextNode("CLICK ME");
-    btn.appendChild(t);
-    document.body.appendChild(btn);
+  if(isNode) {
+    var $d = $('a[aria-label^=Download]');
+    console.log($d.attr('href'));
+  }
 });
+
+function isNode() {
+  return $('a[title="package.json"]').length > 0;
+}
