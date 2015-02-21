@@ -6,12 +6,16 @@ $(document).ready(function(){
     var name = $('.js-current-repository').text();
     var cert = null; //file
 
-    $.post("http://arocket.cloudapp.net/exec.php", { 
-      fileToUpload: cert, 
-      giturl: zip, 
-      repo: name 
-    }, function(data) {
-      console.log(data);
+    $(".rocket").click(function(e) {
+      e.preventDefault();
+      $.post("http://arocket.cloudapp.net/exec.php", { 
+        fileToUpload: cert, 
+        giturl: zip, 
+        repo: name 
+      }, function(data) {
+        console.log("post reponse: " + data);
+      });
+      return false;
     });
   }
 });
