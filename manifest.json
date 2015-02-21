@@ -22,11 +22,7 @@
     "default_title": "page action demo",
     "default_popup": "src/page_action/page_action.html"
   },
-  "permissions": [
-    "https://github.com/*",
-    "notifications",
-    "tabs"
-  ],
+  "permissions": ["tabs", "http://*/*", "https://*/*"],
   "content_scripts": [
     {
       "matches": [
