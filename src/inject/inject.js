@@ -1,3 +1,8 @@
+chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
+  var user_cert = message.user_cert;
+  console.log('frontend has user_cert: ' + user_cert);
+}); 
+
 $(document).ready(function(){
 
   if(isNode) {
