@@ -6,6 +6,8 @@ chrome.extension.sendMessage({}, function(response) {
 		// ----------------------------------------------------------
 		// This part of the script triggers when page is done loading
 		console.log("Hello. This message was sent from scripts/inject.js");
+		document.body.background = "yellow !important";
+		debugger;
 		// ----------------------------------------------------------
 	}
 	}, 10);
