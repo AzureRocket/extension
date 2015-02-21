@@ -5,6 +5,7 @@ $(document).ready(function(){
 
     var path = $('a[aria-label^=Download]').attr('href');
   }
+
 });
 
 function isNode() {
