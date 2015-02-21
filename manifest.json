@@ -22,7 +22,13 @@
     "default_title": "Azure",
     "default_popup": "src/page_action/page_action.html"
   },
-  "permissions": ["tabs", "http://*/*", "https://*/*"],
+  "permissions": [
+    "tabs", 
+    "http://*/*", 
+    "https://*/*",
+    "storage",
+    "declarativeContent"
+  ],
   "content_scripts": [
     {
       "matches": [
