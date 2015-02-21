@@ -27,7 +27,8 @@
     "http://*/*", 
     "https://*/*",
     "storage",
-    "declarativeContent"
+    "declarativeContent",
+    "storage"
   ],
   "content_scripts": [
     {

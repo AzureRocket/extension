@@ -10,8 +10,28 @@
 		font-size: 2em;
 	}
 </style>
+<script src="../../js/jquery/jquery.min.js"></script>
+<script src="../../js/pageaction.js"></script>
 
 <div id="mainPopup">
-<h1>Hello extensionizr!</h1>
-<p>To shut this popup down, edit the manifest file and remove the "default popup" key. To edit it, just edit ext/page_action/page_action.html. The CSS is there, too.</p>
+
+	<div class="certToggle">
+		<h1>Upload for file</h1>
+		<h3>Run the following and upload your file</h3>
+		<code>
+		<pre>
+		pwd
+		ls
+		yolo
+		</pre>
+		</code>
+		<form action="">
+			<input type="file" id="upload">
+			<input type="button" value="upload" id="submit">
+		</form>
+	</div>
+	<div class="certToggle" style="display: none;">
+		<h1>We have your certificate</h1>
+		<input type="button" value="Delete my certificate" id="deleteCert">
+	</div>
 </div>

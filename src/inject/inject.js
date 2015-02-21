@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   if(isNode) {
     $(".only-with-full-nav").append('<a href="#" class="minibutton sidebar-button"><span class="octicon octicon-rocket rocket"></span> Deploy to Azure</a>');
 
@@ -18,7 +19,11 @@ $(document).ready(function(){
       return false;
     });
   }
+
+
+
 });
+
 
 function isNode() {
   return $('a[title="package.json"]').length > 0;
