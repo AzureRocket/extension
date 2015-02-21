@@ -1,9 +1,9 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
+  "name": "Azure Rocket",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "One click deploy git repos to github",
+  "homepage_url": "http://azurerocket.com",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -23,13 +23,14 @@
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
+    "https://github.com/*",
     "notifications",
     "tabs"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://github.com/*"
       ],
       "css": [
         "src/inject/inject.css"
@@ -37,7 +38,7 @@
     },
     {
       "matches": [
-        "https://www.google.com/*"
+        "https://github.com/*"
       ],
       "js": [
         "src/inject/inject.js"
