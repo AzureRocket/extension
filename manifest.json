@@ -19,7 +19,7 @@
   "options_page": "src/options/index.html",
   "page_action": {
     "default_icon": "icons/icon19.png",
-    "default_title": "page action demo",
+    "default_title": "Azure",
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": ["tabs", "http://*/*", "https://*/*"],
@@ -29,7 +29,7 @@
         "https://github.com/*"
       ],
       "js": [
-	"js//jquery/jquery.js", 
+	      "js//jquery/jquery.js", 
         "src/inject/inject.js"
       ]
     }

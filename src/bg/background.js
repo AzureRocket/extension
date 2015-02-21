@@ -10,4 +10,11 @@ chrome.extension.onMessage.addListener(
   function(request, sender, sendResponse) {
   	chrome.pageAction.show(sender.tab.id);
     sendResponse();
-  });
+  }
+);
+
+chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+  chrome.declarativeContent.onPageChanged.addRules([{
+    actions: [new chrome.declarativeContent.ShowPageAction() ]
+  }]);
+});

@@ -1,7 +1,9 @@
 $(document).ready(function(){
   if(isNode) {
-    var $d = $('a[aria-label^=Download]');
-    console.log($d.attr('href'));
+
+    $(".only-with-full-nav").append('<a href="#" class="minibutton sidebar-button"><span class="octicon octicon-rocket rocket"></span> Deploy to Azure</a>');
+
+    var path = $('a[aria-label^=Download]').attr('href');
   }
 });
 
