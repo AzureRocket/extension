@@ -35,8 +35,7 @@
       "js": [
 	      "js//jquery/jquery.js",
         "src/inject/inject.js",
-        "js/socketio.js",
-        "js/modal.js"
+        "js/socketio.js"
       ],
       "css": [
         "modal.css"
