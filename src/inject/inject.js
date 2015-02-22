@@ -28,6 +28,7 @@ $(document).ready(function(){
     var cert = localStorage.user_cert; //file
     $('#append').click(function() {
       $('.modal').toggle();
+      console.log('sending message');
       chrome.runtime.sendMessage({git: git, cert: cert }, function(res) {
         console.log(res);
       })

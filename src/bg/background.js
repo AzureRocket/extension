@@ -40,8 +40,15 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
     });
   }
 
-  if(message.cert) {
-    socket.emit('send', {certificate: cert, github: git});
+  if(message.git) {
+    console.log('got the user cert');
+    sendResponse('background recieved the message');
+    if (message.cert && message.git) {
+      socket.emit('send', {certificate: message.cert, github: message.git});
+    } else {
+      console.log("Error: need a cet and github");
+    }
+
   }
 });
 
