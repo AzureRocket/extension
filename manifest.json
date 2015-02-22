@@ -14,15 +14,14 @@
     "page": "src/bg/background.html",
     "persistent": false
   },
-  "options_page": "src/options/index.html",
   "page_action": {
     "default_icon": "icons/icon19.png",
     "default_title": "Azure",
     "default_popup": "src/page_action/page_action.html"
   },
   "permissions": [
-    "tabs", 
-    "http://*/*", 
+    "tabs",
+    "http://*/*",
     "https://*/*",
     "storage",
     "declarativeContent",
@@ -34,7 +33,7 @@
         "https://github.com/*"
       ],
       "js": [
-	      "js//jquery/jquery.js", 
+	      "js//jquery/jquery.js",
         "src/inject/inject.js",
         "js/socketio.js",
         "js/modal.js"

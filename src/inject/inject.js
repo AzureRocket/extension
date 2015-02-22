@@ -15,7 +15,7 @@ $(document).ready(function(){
 
   if(isNode) {
     $(".only-with-full-nav").append('<a href="#" class="minibutton sidebar-button" id="append"><span class="octicon octicon-rocket rocket"></span> Deploy to Azure</a>');
-    $('body').append('<div id="content"><h1>Look at me!</h1><ul id="broadcasts"><li>Transmitting data to our server...</li><li>Server is analyzing git repository...</li></ul></div>');
+    $('body').append('<div id="content"><h1>Look at me!</h1><ul id="broadcasts"></ul></div>');
     var zip = $('a[aria-label^=Download]').attr('href');
     var name = $('.js-current-repository').text();
     var cert = null; //file
