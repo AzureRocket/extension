@@ -11,6 +11,8 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
     msg += message.socket_data.message;
     if(message.socket_data.command != null) {
       msg += message.socket_data.command;
+    } else if (message.socket_data.link != null) {
+      window.open(message.socket_data.link, '_blank');
     }
     msg += '</li>';
     $('#broadcasts').append(msg);
