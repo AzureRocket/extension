@@ -1,15 +1,19 @@
 .modal {
-    width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-shadow: none;
+    z-index: 1000;
+    background: rgba(0,0,0,0.4);
 }
 #content {
     margin: 0 auto;
     display: block;
     max-width: 600px;
-    background-color: #000;
-    color: rgb(0,255,0);
-    top: 3em;
+    background-color: #fff;
+    color: #000;
     margin: 0 auto;
     margin-top: 1em;
     padding: 1em;

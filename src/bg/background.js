@@ -18,8 +18,8 @@ chrome.runtime.onInstalled.addListener(function() {
 });
 
 var socket = io.connect('http://localhost:3000');
-socket.on('test', function (data) {
-  console.log(data.hello);
+socket.on('message', function (data) {
+  console.log(data.message);
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {socket_data: data}, function(response) {
       console.log(response);
@@ -38,6 +38,10 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
         console.log(response);
       });
     });
+  }
+
+  if(message.cert) {
+    socket.emit('send', {certificate: cert, github: git});
   }
 });
 
