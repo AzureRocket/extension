@@ -8,21 +8,36 @@
     z-index: 1000;
     background: rgba(0,0,0,0.4);
 }
+
 #content {
-    margin: 0 auto;
+    position: absolute;
     display: block;
-    max-width: 600px;
+    top: 0;
+    right: 50vw;
+    width: 600px;
     color: #00587A;
-    margin: 0 auto;
-    overflow-y: scroll;
+    margin-right: -300px;
     margin-top: 40px;
+    overflow-y: scroll;
+    z-index: 999999;
 }
 
-h1 {
+#content h1, #content li {
+    border-radius: 5px;
+}
+
+#content h1 {
     background-color: white;
     font-size: 22px !important;
     padding: 15px 10px;
     text-align: center;
+    position: relative;
+}
+
+h1 img {
+    max-height: 20px;
+    float: right;
+    margin-right: .5em;
 }
 
 #content li {
@@ -32,9 +47,12 @@ h1 {
     padding: 10px;
     margin: 15px inherit;
     border: 2px solid #eee;
+    font-weight: bolder;
 }
 
 #content li .command {
     float: right;
     font-family: monospace;
+    font-weight: normal;
 }
+

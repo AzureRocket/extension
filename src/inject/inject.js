@@ -12,12 +12,14 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
     if(message.socket_data.command != null) {
       msg += '<span class="command">' +  message.socket_data.command + '</span>';
     } else if (message.socket_data.link) {
+      $('#spinner').toggle();
       console.log(message.socket_data.link);
-      window.open(message.socket_data.link, '_blank');
+      window.setTimeout(function() {
+        window.open(message.socket_data.link, '_blank');
+      }, 5000)
     }
     msg += '</li>';
     $('#broadcasts').append(msg);
-    $('#broadcasts').find("li:last").slideDown("fast");
 
   }
 });
@@ -27,17 +29,21 @@ $(document).ready(function(){
   if(isNode) {
     $(".only-with-full-nav").append('<a href="#" class="minibutton sidebar-button" id="append"><span class="octicon octicon-rocket rocket"></span> Deploy to Azure</a>');
     var projName = $('meta[name="octolytics-dimension-user_login"]').attr('content');
-    $('body').append('<section class="modal" style="display: none;"><div id="content"><h1>Deploying ' + projName + '</h1><ul id="broadcasts"></ul></div></section>');
+    $('body').append('<div id="toggle" style="display: none;"><div class="modal"></div><div id="content"><h1><img src="http://i.imgur.com/VsFDAwy.gif" style="display: none" id="spinner">Deploying ' + projName + '</h1><ul id="broadcasts"></ul></div>');
     var relPath = $('meta[name="octolytics-dimension-repository_network_root_nwo"]').attr('content');
     var git = "https://github.com/" + relPath + ".git";
     var name = $('.js-current-repository').text();
     var cert = localStorage.user_cert; //file
     $('#append').click(function() {
-      $('.modal').toggle();
+      $('#toggle').toggle();
+      $('#spinner').toggle();
       console.log('sending message');
       chrome.runtime.sendMessage({git: git, cert: cert }, function(res) {
         console.log(res);
       })
+    });
+    $('.modal').click(function() {
+      $('#toggle').fadeOut(400);
     });
   }
 });

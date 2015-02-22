@@ -36,7 +36,9 @@
       "js": [
 	      "js//jquery/jquery.js",
         "src/inject/inject.js",
-        "js/socketio.js"
+        "js/socketio.js",
+        "js/spin.min.js",
+        "js/jquery.spin.js"
       ],
       "css": [
         "modal.css"
