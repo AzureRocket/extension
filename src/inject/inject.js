@@ -7,7 +7,13 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
 
   if(message.socket_data) {
     sendResponse('got socket data');
-    $('#broadcasts').append('<li>' + message.socket_data.message if (message.socket_data.command) {+ message.socket_data.command} + '</li>')
+    var msg = '<li>';
+    msg += message.socket_data.message;
+    if(message.socket_data.command != null) {
+      msg += message.socket_data.command;
+    }
+    msg += '</li>';
+    $('#broadcasts').append(msg);
   }
 });
 
