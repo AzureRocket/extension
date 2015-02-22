@@ -10,12 +10,15 @@ chrome.runtime.onMessage.addListener( function(message, sender, sendResponse) {
     var msg = '<li>';
     msg += message.socket_data.message;
     if(message.socket_data.command != null) {
-      msg += message.socket_data.command;
-    } else if (message.socket_data.link != null) {
+      msg += '<span class="command">' +  message.socket_data.command + '</span>';
+    } else if (message.socket_data.link) {
+      console.log(message.socket_data.link);
       window.open(message.socket_data.link, '_blank');
     }
     msg += '</li>';
     $('#broadcasts').append(msg);
+    $('#broadcasts').find("li:last").slideDown("fast");
+
   }
 });
 
@@ -23,7 +26,8 @@ $(document).ready(function(){
 
   if(isNode) {
     $(".only-with-full-nav").append('<a href="#" class="minibutton sidebar-button" id="append"><span class="octicon octicon-rocket rocket"></span> Deploy to Azure</a>');
-    $('body').append('<section class="modal" style="display: none;"><div id="content"><h1>Look at me!</h1><ul id="broadcasts"></ul></div></section>');
+    var projName = $('meta[name="octolytics-dimension-user_login"]').attr('content');
+    $('body').append('<section class="modal" style="display: none;"><div id="content"><h1>Deploying ' + projName + '</h1><ul id="broadcasts"></ul></div></section>');
     var relPath = $('meta[name="octolytics-dimension-repository_network_root_nwo"]').attr('content');
     var git = "https://github.com/" + relPath + ".git";
     var name = $('.js-current-repository').text();

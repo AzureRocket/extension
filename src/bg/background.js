@@ -17,7 +17,7 @@ chrome.runtime.onInstalled.addListener(function() {
   });
 });
 
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('http://rocketazure.cloudapp.net/');
 socket.on('message', function (data) {
   console.log(data.message);
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
